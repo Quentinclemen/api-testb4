@@ -3,8 +3,8 @@ import TextField from '@mui/material/TextField';
 import { Container } from '@mui/system';
 import { Paper } from '@material-ui/core'
 import { ClassNames } from '@emotion/react';
-import { Button } from '@mui/material';
 
+import { Link } from 'react-router-dom';
 export default function AddUser() {
   const paperStyle={padding:'50px 20px', width:600, margin:'20px auto'}
   const [firstName, setFirstName]= useState('')
@@ -42,9 +42,9 @@ export default function AddUser() {
       value={email}
       onChange={(e)=>setEmail(e.target.value)}
       />
-       <Button variant="contained" color="secondary" onClick={addUser}>
+       <Link class="nav-link" className="btn btn-success col-md-2" to="/" onClick={addUser}>
         Submit
-      </Button>
+      </Link>
     </form>
 
       </Paper>

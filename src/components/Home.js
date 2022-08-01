@@ -11,6 +11,7 @@ export default function Home() {
     }).then(res => res)
   }
 
+  
   useEffect(()=>{
     fetch("http://localhost:8080/api/getAllUsers")
     .then(res=>res.json())
@@ -43,7 +44,7 @@ export default function Home() {
             <div className="col-md-2">{user.lastName}</div>
             <div className="col-md-2">{user.email}</div>
             <Link className="btn btn-success col-md-2" to={`/edit-user/${user.id}`}>Edit</Link>
-            <Link className="btn btn-danger col-md-2" to="" onClick={()=> deleteUser(user.id)}>Delete</Link>
+            <Link className="btn btn-danger col-md-2" to="/" onClick={()=> deleteUser(user.id)}>Delete</Link>
         </div>
         ))}
     </Container>

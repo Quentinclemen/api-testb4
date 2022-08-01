@@ -3,7 +3,7 @@ import TextField from '@mui/material/TextField';
 import { Container } from '@mui/system';
 import { Paper } from '@material-ui/core'
 import { ClassNames } from '@emotion/react';
-import { Button } from '@mui/material';
+import { Link } from 'react-router-dom';
 import { useParams } from 'react-router-dom';
 
 export default function EditUser() {
@@ -30,7 +30,7 @@ export default function EditUser() {
         <h1>Edit User</h1>
 
     <form className={ClassNames.root} noValidate autoComplete="off">
-      <TextField id="outlined-basic" placeholder={firstName} variant="outlined" defaultValue={firstName} fullWidth
+      <TextField id="outlined-basic" label="First Name" variant="outlined" fullWidth
       value={firstName}
       onChange={(e)=>setFirstName(e.target.value)}
       />
@@ -42,9 +42,10 @@ export default function EditUser() {
       value={email}
       onChange={(e)=>setEmail(e.target.value)}
       />
-       <Button variant="contained" color="secondary" onClick={()=> updateUser(id)}>
+       <Link class="nav-link" className="btn btn-success col-md-2" to="/" onClick={()=> updateUser(id)}>
         Submit
-      </Button>
+      </Link>
+      
     </form>
 
       </Paper>
